@@ -1,9 +1,3 @@
-const orderSum = document.querySelector('#orderSum');
-const averagePrice = document.querySelector('#averagePrice');
-
-const calculateSumButton = document.querySelector('#calculateSumButton');
-const calculateAveragePriceButton = document.querySelector('#calculateAveragePriceButton')
-
 const products = [
     {
       name: 'banan',
@@ -23,25 +17,13 @@ const products = [
     }
   ]
 
-const calculateOrderSum = () => {
-    let sum = 0;
+  let sum = 0;
 
-    products.forEach(order => {
-        sum += order.price
-    })
+  // for/forof/forEach
 
-    orderSum.innerText = ` ${sum} zł`;
-}
+  products.forEach(product => {
+    sum = sum + product.price;
+  })
 
-const calculateAveragePrice = () => {
-    let sum = 0;
-  
-    products.forEach(order => {
-      sum += order.price
-    })
-  
-    averagePrice.innerText = ` ${(sum / products.length).toFixed(2)}zł`
-  }
-
-  calculateSumButton.addEventListener('click', calculateOrderSum);
-  calculateAveragePriceButton.addEventListener('click', calculateAveragePrice);
+  console.log(`Suma to ${sum}`);
+  console.log(`Srednia cena produktu to ${sum/products.length}`);
